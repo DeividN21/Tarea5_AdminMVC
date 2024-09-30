@@ -20,3 +20,23 @@ def guardar(request):
     p.save()
     messages.success(request,'Producto agregado!')
     return redirect('consultar')
+
+def eliminar(request, id):
+    producto = Producto.objects.filter(pk=id)
+    producto.delete()
+    messages.success(request, 'Producto eliminado!')
+    return redirect('consultar')
+
+def detalle(request, id):
+    producto = Producto.objects.get(pk=id)
+    return render(request, "productoEditar.html", {'producto' : producto})
+    
+def editar(request):
+    nombre = request.POST["nombre"]
+    precio = request.POST["precio"]
+    cantidad = request.POST["cantidad"]
+    descripcion = request.POST["descripcion"]
+    id = request.POST["id"]
+    Producto.objects.filter(pk=id).update(id=id,nombre=nombre,precio=precio,cantidad=cantidad,descripcion=descripcion)
+    messages.success(request, 'Producto actualizado con exito!')
+    return redirect('consultar')

@@ -32,7 +32,9 @@
             <th>Precio</th>
             <th>Cantidad</th>
             <th>Descripcion</th>
-            <th></th>
+            <th colspan="2">
+                Acciones
+            </th>
         </tr>
     {% for producto in productos %}
         <tr>
@@ -40,7 +42,24 @@
             <td>{{ producto.precio }}</td>
             <td>{{ producto.cantidad }}</td>
             <td>{{ producto.descripcion }}</td>
-            <td></td>
+            <td>
+                <form action="{% url 'eliminar' producto.id %}"
+                method="post">
+                    {% csrf_token %}
+                    <button class="btn btn-danger" onclick="return confirm('¿Estás seguro de eliminar este producto?')">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                </form>
+            </td>
+            <td>
+                <form action="{% url 'detalle' producto.id %}"
+                method="post">
+                    {% csrf_token %}
+                    <button class="btn btn-warning">
+                        <i class="fa-regular fa-pen-to-square"></i>
+                    </button>
+                </form>
+            </td>
         </tr>
     {% endfor %}
     </table>
