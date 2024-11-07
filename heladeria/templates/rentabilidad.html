@@ -6,4 +6,85 @@
     <div class="text-end">
         <a href="{% url 'salir' %}" class="btn btn-info m-3">Cerrar Sesión</a>
     </div>
+    <div class="m-4">
+        <h3>Por favor, selecciona dos categorías para analizar:</h3>
+    </div>
+
+    <div class="row text-center mb-4">
+        <div class="col-md-3">
+            <button class="btn btn-primary">
+                Categoría 1:
+            </button>
+        </div>
+        <div class="col-md-3">
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Selecciona Categoría 1</option>
+                <option value="1">Helados de Hielo</option>
+                <option value="2">Helados de Crema</option>
+                <option value="3">Postres con Queso</option>
+              </select>
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-primary">
+                Categoría 2:
+            </button>
+        </div>
+        <div class="col-md-3">
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Selecciona Categoría 2</option>
+                <option value="1">Bolos</option>
+                <option value="2">Helados de sabores</option>
+                <option value="3">Helados con Queso</option>
+              </select>
+        </div>
+    </div>
+
+    <div class="row text-center mb-4 m-5">
+        <div class="col-md-4">
+            <div class="d-flex align-items-center mb-2">
+                <i class="fas fa-info-circle me-2"></i>
+                <h5>Datos Categoría 1</h5>
+            </div>
+            <textarea class="form-control mb-2" rows="3">
+                - Costo promedio de productos:
+                - Precio de venta promedio:
+                - Rentabilidad:
+            </textarea>
+        </div>
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
+            <button class="btn btn-primary">
+                <i class="bi bi-caret-right"></i>
+                Calcular Rentabilidad
+            </button>
+        </div>
+        <div class="col-md-4">
+            <div class="d-flex align-items-center mb-2">
+                <i class="fas fa-info-circle me-2"></i>
+                <h5>Datos Categoría 2</h5>
+            </div>
+            <textarea class="form-control mb-2" rows="3">
+                - Costo promedio de productos:
+                - Precio de venta promedio:
+                - Rentabilidad:
+            </textarea>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center mt-4">
+        <div class="d-flex flex-column align-items-start me-3">
+            <div class="d-flex align-items-center mb-2">
+                <i class="fas fa-info-circle me-2"></i>
+                <h5>RESULTADO FINAL:</h5>
+            </div>
+            <textarea class="form-control mb-2" style="height: 200px; width: 100%;">
+                Luego de comparar ambas categorías se tiene que la Categoría 1 es más rentable, con un valor promedio de: 
+            </textarea>
+        </div>
+        <button class="btn btn-warning">
+            <i class="bi bi-arrow-clockwise me-2"></i>
+            Actualizar
+        </button>
+    </div>
+    
+    
 {% endblock %}
