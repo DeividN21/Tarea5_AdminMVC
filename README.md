@@ -35,7 +35,7 @@ Presentar de manera general la administración del proyecto Core MVC, en base a 
 - Si el usuario quiere salir puede aplastar el botón de "Cerrar Sesión", el cual redirige a la página web principal.
 
 # Enlace del Video de Demostración
-- enlace
+- https://youtu.be/WDYabxzt5pk
   
 # Enlace de Netlify con el deploy
 - enlace
