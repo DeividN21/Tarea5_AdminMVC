@@ -28,5 +28,12 @@ urlpatterns = [
     path('productos/eliminar/<int:id>', views.eliminar, name='eliminar'),
     path('productos/detalle/<int:id>', views.detalle, name='detalle'),
     path('productos/editar', views.editar, name='editar'),
+    path('proveedores', views.consultarP, name='consultarP'),
+    path('proveedores/guardar', views.guardarP, name='guardarP'),
+    path('proveedores/eliminar/<int:id>', views.eliminarP, name='eliminarP'),
+    path('proveedores/detalle/<int:id>', views.detalleP, name='detalleP'),
+    path('proveedores/editar', views.editarP, name='editarP'),
+    path('rentabilidad', views.consultarRentabilidad, name='consultarRentabilidad'),
+    path('costoEficiencia', views.consultarCostoEficiencia, name='consultarCostoEficiencia'),
     path('salir/',views.salir, name='salir'),
 ]

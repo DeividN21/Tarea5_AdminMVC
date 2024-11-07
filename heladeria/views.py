@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from heladeria.models import Producto
+from heladeria.models import Producto, Proveedor
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
@@ -76,6 +76,51 @@ def editar(request):
     Producto.objects.filter(pk=id).update(id=id,nombre=nombre,precio=precio,cantidad=cantidad,descripcion=descripcion)
     messages.success(request, 'Producto actualizado con exito!')
     return redirect('consultar')
+
+@login_required
+def consultarP(request):
+    proveedores = Proveedor.objects.all()
+    return render(request,"proveedores.html",{'proveedores' : proveedores})
+
+def guardarP(request):
+    nombreProveedor = request.POST["nombreProveedor"]
+    categoriaSuministrada = request.POST["categoriaSuministrada"]
+    costoInsumo = request.POST["costoInsumo"]
+    tiempoEntrega = request.POST["tiempoEntrega"]
+    pr = Proveedor(nombreProveedor=nombreProveedor, categoriaSuministrada=categoriaSuministrada,
+                   costoInsumo=costoInsumo,tiempoEntrega=tiempoEntrega)
+    pr.save()
+    messages.success(request,'Proveedor agregado!')
+    return redirect('consultarP')
+
+def eliminarP(request, id):
+    proveedor = Proveedor.objects.filter(pk=id)
+    proveedor.delete()
+    messages.success(request, 'Proveedor eliminado!')
+    return redirect('consultarP')
+
+def detalleP(request, id):
+    proveedor = Proveedor.objects.get(pk=id)
+    return render(request, "proveedorEditar.html", {'proveedor' : proveedor})
+
+def editarP(request):
+    nombreProveedor = request.POST["nombreProveedor"]
+    categoriaSuministrada = request.POST["categoriaSuministrada"]
+    costoInsumo = request.POST["costoInsumo"]
+    tiempoEntrega = request.POST["tiempoEntrega"]
+    id = request.POST["id"]
+    Proveedor.objects.filter(pk=id).update(id=id,nombreProveedor=nombreProveedor,categoriaSuministrada=categoriaSuministrada,
+                                            costoInsumo=costoInsumo,tiempoEntrega=tiempoEntrega)
+    messages.success(request, 'Proveedor actualizado con exito!')
+    return redirect('consultarP')
+
+@login_required
+def consultarRentabilidad(request):
+    return render(request, "rentabilidad.html")
+
+@login_required
+def consultarCostoEficiencia(request):
+    return render(request, "costoEficiencia.html")
 
 def salir(request):
     logout(request)
