@@ -21,7 +21,7 @@ Presentar de manera general la administración del proyecto Core MVC, en base a 
 - Además, el MiniCore también brindará la posibilidad de ponderar el costo de los insumos suministrados por los proveedores y el tiempo promedio que tardan en despacharlos o entregarlos. De esta manera, se puede analizar cuál de ellos ofrece la mejor relación costo-eficiencia.
 
 # Vista de la Página Principal:
-![Imagen](https://raw.githubusercontent.com/DeividN21/Tarea2_LOGIN/81a8ccde0b42158aa402e355e5099b39d8ec4b01/Captura%20de%20pantalla%202024-10-12%20200103.png)
+![Imagen](https://raw.githubusercontent.com/DeividN21/Tarea5_AdminMVC/ff857f86d70cd6f3f4bc5d14c86a51cec5d63a87/Captura%20de%20pantalla%202024-11-07%20084014.png)
 
 # Instrucciones para Navegar por la Página
 ### Primero:
