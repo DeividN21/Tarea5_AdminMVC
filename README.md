@@ -37,5 +37,5 @@ Presentar de manera general la administración del proyecto Core MVC, en base a 
 # Enlace del Video de Demostración
 - https://youtu.be/WDYabxzt5pk
   
-# Enlace de Netlify con el deploy
+# Enlace con el deploy
 - enlace
